@@ -1,14 +1,14 @@
-import { useState } from "react";
-import pokemonCard from "./components/pokemonCard.tsx";
-import viteLogo from "/vite.svg";
+import PokemonCard from "./components/PokemonCard";
+
 import "./App.css";
 
 function App() {
 	return (
 		<div>
-			<pokemonCard></pokemonCard>
+			<p>Hello</p>
+			<PokemonCard />
 		</div>
 	);
 }
-App();
+
 export default App;
