@@ -9,13 +9,14 @@ const pokemonList = [
 	},
 ];
 
-function PokemonCard(pokemon_1) {
+function PokemonCard() {
+	const pokemon_1 = pokemonList[0];
 	return (
 		<figure>
-			{pokemon_1.imgSrc === "null" ? (
+			{pokemon_1?.imgSrc == null ? (
 				<p>???</p>
 			) : (
-				<img src={pokemon_1.imgSrc} alt="bulbasaur img" />
+				<img src={pokemon_1.imgSrc} alt={pokemon_1.name} />
 			)}
 			<figcaption>{pokemon_1.name}</figcaption>
 		</figure>
