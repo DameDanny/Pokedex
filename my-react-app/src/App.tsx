@@ -1,5 +1,6 @@
 import PokemonCard from "./components/PokemonCard";
 import { useState } from "react";
+import NavBar from "./components/NavBar";
 
 const pokemonList = [
 	{
@@ -31,14 +32,6 @@ import "./App.css";
 
 function App() {
 	const [pokemonIndex, setNumber] = useState(0);
-	const booleanPokemon = pokemonIndex > 0;
-	const booleanPokemon2 = pokemonIndex < pokemonList.length - 1;
-	const previousClick = () => {
-		setNumber(pokemonIndex - 1);
-	};
-	const nextClick = () => {
-		setNumber(pokemonIndex + 1);
-	};
 	return (
 		<div>
 			<p>Hello pokemon number {pokemonIndex}</p>
@@ -47,12 +40,11 @@ function App() {
 				imgSrc={pokemonList[pokemonIndex].imgSrc}
 			/>
 			<div>
-				{booleanPokemon ? (
-					<button onClick={previousClick}>Previous</button>
-				) : (
-					<br />
-				)}
-				{booleanPokemon2 ? <button onClick={nextClick}>Next</button> : <br />}
+				<NavBar
+					pokemonIndex={pokemonIndex}
+					setPokemonIndex={setNumber}
+					pokemonList={pokemonList}
+				/>
 			</div>
 		</div>
 	);
