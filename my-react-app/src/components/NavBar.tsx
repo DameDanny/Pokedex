@@ -5,20 +5,24 @@ interface Pokemon {
 
 interface NavBarProps {
 	pokemonIndex: number;
-	setPokemonIndex: (index: number) => void;
+	setIndex: (index: number) => void;
 	pokemonList: Pokemon[];
 }
 
-function NavBar({ pokemonIndex, setPokemonIndex, pokemonList }: NavBarProps) {
-	return 
-    <div>
-       {pokemonList.map(article) => (
-        <article
-        key={article.name}>
-            
-        </article>
-       )}
-    <div/>;
+function NavBar({ pokemonIndex, setIndex, pokemonList }: NavBarProps) {
+	const setPokemonIndex = (index) => {
+		setIndex(index);
+	};
+
+	return (
+		<div>
+			{pokemonList.map((article, index) => (
+				<button onClick={() => setPokemonIndex(index)} key={index}>
+					{article.name}
+				</button>
+			))}
+		</div>
+	);
 }
 
 export default NavBar;

@@ -31,10 +31,10 @@ const pokemonList = [
 import "./App.css";
 
 function App() {
-	const [pokemonIndex, setNumber] = useState(0);
+	const [pokemonIndex, setIndex] = useState(0);
+
 	return (
 		<div>
-			<p>Hello pokemon number {pokemonIndex}</p>
 			<PokemonCard
 				name={pokemonList[pokemonIndex].name}
 				imgSrc={pokemonList[pokemonIndex].imgSrc}
@@ -42,7 +42,7 @@ function App() {
 			<div>
 				<NavBar
 					pokemonIndex={pokemonIndex}
-					setPokemonIndex={setNumber}
+					setIndex={setIndex}
 					pokemonList={pokemonList}
 				/>
 			</div>
