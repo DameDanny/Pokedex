@@ -21,13 +21,7 @@ function NavBar({ pokemonIndex, setIndex, pokemonList }: NavBarProps) {
 		}
 	};
 	return (
-		<div
-		// onLoad={() =>
-		// 	pokemonList[pokemonIndex].name === "pikachu"
-		// 		? alert("pika pika")
-		// 		: alert("hello pokemon trainer :)")
-		// }
-		>
+		<div>
 			{pokemonList.map((article, index) => (
 				<button
 					onClick={() => {
